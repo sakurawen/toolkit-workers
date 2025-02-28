@@ -1,7 +1,9 @@
+import { PageContainer } from '~/components/features/page-container';
+
 export default function DouYin() {
   return (
-    <div>
-      are you ok?
-    </div>
+    <PageContainer>
+      coming soon...
+    </PageContainer>
   );
 }

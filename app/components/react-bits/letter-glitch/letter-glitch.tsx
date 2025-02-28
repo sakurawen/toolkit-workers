@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const defaultGlitchColors = ['oklch(0.882 0.059 254.128)', 'oklch(0.811 0.111 293.571)', 'oklch(0.283 0.141 291.089)', 'oklch(0.894 0.057 293.283)'];
+const defaultGlitchColors = ['white', 'gray', 'black'];
 export function LetterGlitch({
   glitchColors = defaultGlitchColors,
   glitchSpeed = 50,
@@ -288,7 +288,7 @@ export function LetterGlitch({
   }, [glitchSpeed, smooth]);
 
   return (
-    <div className="relative w-full h-full bg-white overflow-hidden">
+    <div className="relative w-full h-full bg-gray-950 overflow-hidden">
       <canvas ref={canvasRef} className="block w-full h-full" />
       {outerVignette && (
         <div

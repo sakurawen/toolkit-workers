@@ -9,6 +9,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'react-router';
+import { ScrollArea } from '~/components/ui/scroll-area';
 import { Toaster } from '~/components/ui/sonner';
 import './app.css';
 
@@ -35,9 +36,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider forcedTheme="light" attribute="class">
+        <ThemeProvider forcedTheme="dark" attribute="class">
           <LazyMotion features={domAnimation} strict>
-            {children}
+            <ScrollArea className="h-screen">
+              {children}
+            </ScrollArea>
             <Toaster position="top-center" />
           </LazyMotion>
         </ThemeProvider>

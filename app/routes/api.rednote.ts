@@ -1,9 +1,5 @@
 import type { Route } from './+types/api.rednote';
 
-function getImageUrl(hash: string) {
-  return `https://ci.xiaohongshu.com/${hash}?imageView2/2/w/format/png`;
-}
-
 export async function loader({ request }: Route.LoaderArgs) {
   try {
     const { searchParams } = new URL(request.url);
@@ -14,7 +10,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     const key = new URL(url).pathname.split('/').pop() as string || '';
     const images = state?.note.noteDetailMap?.[key]?.note?.imageList?.map((item: { urlDefault: string }) => item.urlDefault).map((url: string) => {
       const hash = new URL(url).pathname.split('/').pop()?.split('!')[0] as string;
-      return getImageUrl(hash);
+      return `/api/rednote/${hash}`;
     });
     return Response.json(images);
   }

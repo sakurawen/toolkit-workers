@@ -32,7 +32,7 @@ export default function Home() {
         <LetterGlitch
           glitchSpeed={50}
           centerVignette={false}
-          outerVignette={false}
+          outerVignette
           smooth
         />
       </div>

@@ -24,10 +24,10 @@ export function UtilsCard(props: UtilsCardProps) {
     <SpotlightCard className={cn('util-card select-none shadow ', className)}>
       <div className="space-y-6">
         <div className="h-10">
-          <img className="w-20" src={logo} alt="logo" />
+          <img className="w-20 ring-1 rounded-full ring-gray-200/10" src={logo} alt="logo" />
         </div>
         <div className="space-y-2">
-          <h1 className="text-2xl text-black font-bold">{title}</h1>
+          <h1 className="text-2xl  font-bold">{title}</h1>
           <p className="text-sm text-gray-400">{description}</p>
         </div>
         <Link to={to}>
